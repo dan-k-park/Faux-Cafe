@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux';
 import { FaBars } from "react-icons/fa";
 import { CgCoffee } from "react-icons/cg"
 import { IconContext } from "react-icons/lib";
@@ -16,7 +17,7 @@ import {
   NavName
 } from "./NavbarElements";
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, auth }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -34,6 +35,22 @@ const Navbar = ({ toggle }) => {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
+
+  const renderButton = () => {
+    switch(auth) {
+      case null:
+        // don't show anything when the promise hasn't resolved
+        return;
+      case false:
+        return (
+          <NavBtnLink to="signin">Sign In</NavBtnLink>
+          )
+      default:
+        return (
+          <NavBtnLink onClick={() => window.location = '/api/logout'} >Sign Out</NavBtnLink>
+        )
+    }
+  }
 
   return (
     <>
@@ -89,7 +106,7 @@ const Navbar = ({ toggle }) => {
               </NavItem>
             </NavMenu>
             <NavBtn>
-              <NavBtnLink to="signin">Sign In</NavBtnLink>
+              {renderButton()}
             </NavBtn>
           </NavbarContainer>
         </Nav>
@@ -98,4 +115,8 @@ const Navbar = ({ toggle }) => {
   );
 };
 
-export default Navbar;
+function mapStateToProps({ auth }) {
+  return { auth } // identical key value pair { auth: auth } = { auth }
+}
+
+export default connect(mapStateToProps)(Navbar);

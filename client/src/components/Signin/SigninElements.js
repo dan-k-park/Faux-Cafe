@@ -10,8 +10,26 @@ export const Container = styled.div`
   top: 0;
   z-index: 0;
   overflow: hidden;
-  background: linear-gradient(108deg, rgba(1,147,86,1) 0%, rgba(10, 201,122,1) 100%);
+  background: #0c0c0c;
 `;
+
+export const FormBg = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
+
+export const ImageBg = styled.img`
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+`;
+
 
  export const FormWrap = styled.div`
   height: 100vh;
@@ -28,7 +46,7 @@ export const Container = styled.div`
   margin-left: 32px;
   margin-top: 32px;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-weight: 700;
   font-size: 32px;
 
@@ -74,32 +92,6 @@ export const Container = styled.div`
   text-align: center;
  `;
 
- export const FormLabel = styled.label`
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #fff;
-`;
-
-export const FormInput = styled.input`
-  padding: 16px 16px;
-  margin-bottom: 32px;
-  border: none;
-  border-radius: 4px;
-`;
-
-export const FormButton = styled.button`
-  background: #01bf71;
-  padding: 16px 0;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-`;
-
-export const Text = styled.span`
-  text-align: center;
-  margin-top: 24px;
-  color: #fff;
-  font-size: 14px;
+export const FormSocialLoginBtn = styled(Link)`
+  text-decoration: none
 `

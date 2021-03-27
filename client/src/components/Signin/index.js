@@ -3,30 +3,43 @@ import { GoogleLoginButton, TwitterLoginButton, FacebookLoginButton } from "reac
 
 import {
   Container,
+  FormBg,
+  ImageBg,
   Form,
   FormH1,
   FormContent,
   FormWrap,
-  Icon
+  Icon,
+  FormSocialLoginBtn
 } from "./SigninElements";
+
+import Image from "../../assets/images/hero-background.jpg";
+
 
 const Signin = () => {
   return (
-    <>
-      <Container>
-        <FormWrap>
-          <Icon to="/">Faux Cafe</Icon>
-          <FormContent>
-            <Form action="#">
-              <FormH1>Sign In</FormH1>
-              <GoogleLoginButton onClick={() => alert("Hello")}/>
-              <FacebookLoginButton onClick={() => alert("Hello")}/>
-              <TwitterLoginButton onClick={() => alert("Hello")}/>
-            </Form>
-          </FormContent>
-        </FormWrap>
-      </Container>
-    </>
+    <Container>
+      <FormBg>
+        <ImageBg src={Image} type="image/jpg" />
+      </FormBg>
+      <FormWrap>
+        <Icon to="/">Faux Cafe</Icon>
+        <FormContent>
+          <Form action="#">
+            <FormH1>Sign In</FormH1>
+            <FormSocialLoginBtn>
+              <GoogleLoginButton onClick={() => window.location = '/auth/google'} />
+            </FormSocialLoginBtn>
+            <FormSocialLoginBtn>
+              <FacebookLoginButton onClick={() => window.location = '/auth/google'} />
+            </FormSocialLoginBtn>
+            <FormSocialLoginBtn>
+              <TwitterLoginButton onClick={() => window.location = '/auth/google'} />
+            </FormSocialLoginBtn>
+          </Form>
+        </FormContent>
+      </FormWrap>
+    </Container>
   );
 };
 
