@@ -23,6 +23,7 @@ passport.use(
       clientID: keys.facebookAppID,
       clientSecret: keys.facebookAppSecret,
       callbackURL: "/auth/facebook/callback",
+      profileFields: ['name', 'emails'],
       enableProof: true,
       proxy: true,
     },
@@ -35,8 +36,7 @@ passport.use(
       const user = await new User({
         firstName: profile.name["givenName"],
         lastName: profile.name["familyName"],
-        twitter: '',
-        googleId: '',
+        email: profile.emails[0]["value"],
         facebookId: profile.id
       }).save();
       done(null, user);
@@ -63,8 +63,6 @@ passport.use(
         lastName: profile.name["familyName"],
         email: profile.emails[0]["value"],
         googleId: profile.id,
-        facebookId: '',
-        twitterId: '',
       }).save();
       done(null, user);
     }
@@ -90,8 +88,6 @@ passport.use(
         lastName: name[1],
         email: "",
         twitter: profile.id,
-        googleId: '',
-        facebookId: ''
       }).save();
       done(null, user);
     }
