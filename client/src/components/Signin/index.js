@@ -34,7 +34,7 @@ const Signin = () => {
               <FacebookLoginButton onClick={() => window.location = '/auth/google'} />
             </FormSocialLoginBtn>
             <FormSocialLoginBtn>
-              <TwitterLoginButton onClick={() => window.location = '/auth/google'} />
+              <TwitterLoginButton onClick={() => window.location = '/auth/twitter'} />
             </FormSocialLoginBtn>
           </Form>
         </FormContent>

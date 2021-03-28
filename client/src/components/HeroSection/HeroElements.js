@@ -41,7 +41,7 @@ export const HeroContent = styled.div`
 
 export const HeroH1 = styled.h1`
   color: #0d1010;
-  font-size: 100px;
+  font-size: 32px;
   text-align: center;
 
   @media screen and (max-width: 768px) {
@@ -56,7 +56,7 @@ export const HeroH1 = styled.h1`
 export const HeroP = styled.p`
   margin-top: 24px;
   color: #0d1010;
-  font-size: 50px;
+  font-size: 24px;
   text-align: center;
   max-width: 600px;
 
@@ -77,7 +77,7 @@ export const HeroBtnWrapper = styled.div`
 
 export const HeroBtnText = styled.p`
   color: #fff;
-  font-size: 24px;
+  font-size: 18px;
 `;
 
 export const ArrowForward = styled(MdArrowForward)`
