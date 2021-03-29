@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
+
 import Image from "../../assets/images/hero-background.jpg";
-import { Button } from "../ButtonElements";
 import {
   HeroContainer,
   HeroBg,
@@ -11,6 +11,7 @@ import {
   HeroH1,
   HeroP,
   HeroBtnWrapper,
+  HeroBtn,
   HeroBtnText,
   ArrowForward,
   ArrowRight,
@@ -54,16 +55,12 @@ const HeroSection = ({ auth }) => {
         {renderContent()}
 
         <HeroBtnWrapper>
-          <Button
+          <HeroBtn
             to="order"
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary="true"
-            dark="false"
           >
             <HeroBtnText>Order Online</HeroBtnText>
             {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
+          </HeroBtn>
         </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>
