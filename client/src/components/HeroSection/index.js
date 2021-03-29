@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 import Image from "../../assets/images/hero-background.jpg";
 import { Button } from "../ButtonElements";
@@ -31,20 +31,19 @@ const HeroSection = ({ auth }) => {
       case false:
         return (
           <>
-        <HeroH1>Faux</HeroH1>
-        <HeroP>Cafe and Bakery</HeroP>
+            <HeroH1>Faux</HeroH1>
+            <HeroP>Cafe and Bakery</HeroP>
           </>
-        )
+        );
       default:
         return (
-<>
-        <HeroH1>Welcome back {auth.firstName}!</HeroH1>
-        <HeroP>You have {auth.points} points</HeroP>
-          </>        
-          )
+          <>
+            <HeroH1>Welcome back {auth.firstName}!</HeroH1>
+            <HeroP>You have {auth.points} points</HeroP>
+          </>
+        );
     }
-  }
-
+  };
 
   return (
     <HeroContainer id="home">
@@ -72,7 +71,7 @@ const HeroSection = ({ auth }) => {
 };
 
 function mapStateToProps({ auth }) {
-  return { auth } // identical key value pair { auth: auth } = { auth }
+  return { auth }; // identical key value pair { auth: auth } = { auth }
 }
 
 export default connect(mapStateToProps)(HeroSection);

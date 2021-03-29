@@ -17,7 +17,7 @@ import {
   NavName
 } from "./NavbarElements";
 
-const Navbar = ({ toggle, auth }) => {
+const OrderNavbar = ({ toggle, auth }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -119,4 +119,4 @@ function mapStateToProps({ auth }) {
   return { auth } // identical key value pair { auth: auth } = { auth }
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(OrderNavbar);

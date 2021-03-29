@@ -6,6 +6,7 @@ import * as actions from './actions';
 
 
 import Home from './pages';
+import OrderPage from './pages/order';
 import SigninPage from './pages/signin';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/signin' render={props => <SigninPage {...props} />} exact />
+          <Route path='/order' render={props => <OrderPage {...props} />} exact />
         </Switch>
       </Router>
     )
