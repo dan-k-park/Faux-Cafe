@@ -1,7 +1,20 @@
 import React, { Component } from "react";
 import Image from "../../assets/images/hero-background.jpg";
 
-import { MenuContainer, MenuBg, ImageBg } from "./MenuElements";
+import {
+  Background, ImageBg, OrderContainer,
+  OrderWrapper,
+  MenuWrapper,
+  MenuItem,
+  ItemName,
+  ItemDesc,
+  CartWrapper,
+  Cart,
+  CartItem,
+  CartItemName,
+  CartItemQuantity,
+  OrderBtn
+} from "./MenuElements";
 
 class Menu extends Component {
   state = {
@@ -32,46 +45,81 @@ class Menu extends Component {
     );
   };
 
-  renderCartItem = () => {
-    return (
-      <>
-        <CartItemCard>
-          <h1>
+  // renderCartItem = () => {
+  //   return (
+  //     <>
+  //       <CartItemCard>
+  //         <h1>
 
-          </h1>
-          <h1>
+  //         </h1>
+  //         <h1>
 
-          </h1>
-        </CartItemCard>
-      </>
-    )
-  }
+  //         </h1>
+  //       </CartItemCard>
+  //     </>
+  //   )
+  // }
 
   render() {
     return (
-      <MenuContainer>
-        <MenuBg>
+      <OrderContainer>
+        <Background>
           <ImageBg src={Image} type="image/jpg" />
-        </MenuBg>
-        <MenuWrapper>
-          <MenuRow>
-            <Column1>
-              <MenuItem>
-              </MenuItem>
-            </Column1>
-            <Column2>
-              <CartWrapper>
-                <CartItems>
-                  {this.renderCartItem()}
-                </CartItems>
-                <SubmitOrderBtnWrap>
-                  <SubmitOrderBtn>Submit Order</SubmitOrderBtn>
-                </SubmitOrderBtnWrap>
-              </CartWrapper>
-            </Column2>
-          </MenuRow>
-        </MenuWrapper>
-      </MenuContainer>
+        </Background>
+        <OrderWrapper>
+          <MenuWrapper>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+            <MenuItem>
+              <ItemName>Coffee Bean</ItemName>
+              <ItemDesc>Price</ItemDesc>
+            </MenuItem>
+          </MenuWrapper>
+          <CartWrapper>
+            <Cart>
+              <CartItem>
+                <h4>Bean Juice</h4>
+                <p>3</p>
+              </CartItem>
+              <CartItem>
+                <h4>Bean Juice</h4>
+                <p>3</p>
+              </CartItem>
+              <CartItem>
+                <h4>Bean Juice</h4>
+                <p>3</p>
+              </CartItem>
+            </Cart>
+            <OrderBtn>Place Order</OrderBtn>
+          </CartWrapper>
+        </OrderWrapper>
+      </OrderContainer>
     );
   }
 }
