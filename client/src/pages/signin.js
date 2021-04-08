@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 import SignIn from "../components/Signin";
+import Footer from '../components/Footer';
 import ScrollToTop from "../components/ScrollToTop";
 
 class SigninPage extends Component {
@@ -16,6 +17,7 @@ class SigninPage extends Component {
         <div>
           <ScrollToTop />
           <SignIn />
+          <Footer />
         </div>
         )
       default:

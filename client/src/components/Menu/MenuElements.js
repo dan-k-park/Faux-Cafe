@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const OrderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  height: 100vh;
+  z-index: 0 ;
+  position: relative;
+`;
+
 export const Background = styled.div`
   position: absolute;
   top: 0;
@@ -7,7 +17,12 @@ export const Background = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  z-index: -99;
+
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
 `;
 
 export const ImageBg = styled.img`
@@ -15,18 +30,12 @@ export const ImageBg = styled.img`
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
 `;
 
-export const OrderContainer = styled.div`
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 30px;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-`;
 
 export const OrderWrapper = styled.div`
   margin: 0 auto;
@@ -41,8 +50,8 @@ export const OrderWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    max-height: 100vh;
     padding: 50px;
-    overflow: scroll;
   }
 `;
 
