@@ -34,5 +34,8 @@
     "path-parser": "^6.1.0",
     "sendgrid": "^5.2.3",
     "stripe": "^8.140.0"
+  },
+  "devDependencies": {
+    "v-response": "^1.1.0"
   }
 }
