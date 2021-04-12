@@ -31,7 +31,7 @@ const Sidebar = ({ auth, isOpen, toggle }) => {
   }
 
   return (
-    <>
+
       <SidebarContainer isOpen={isOpen} onClick={toggle}>
         <Icon>
           <CloseIcon />
@@ -47,7 +47,7 @@ const Sidebar = ({ auth, isOpen, toggle }) => {
           </SideBtnWrap>
         </SidebarWrapper>
       </SidebarContainer>
-    </>
+
   );
 };
 

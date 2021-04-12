@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -11,6 +10,16 @@ export const HeroContainer = styled.div`
   height: 100vh;
   position: relative;
   z-index: 1;
+
+  :before {
+    content: '',
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%),
+    z-index: 2;
+  }
 `;
 
 export const HeroBg = styled.div`
@@ -23,11 +32,12 @@ export const HeroBg = styled.div`
   overflow: hidden;
 `;
 
-export const ImageBg = styled.img`
+export const VideoBg = styled.video`
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  background: #232a34;
 `;
 
 export const HeroContent = styled.div`
@@ -41,16 +51,16 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroH1 = styled.h1`
-  color: #0d1010;
-  font-size: 32px;
+  color: #fff;
+  font-size: 48px;
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    font-size: 48px;
+    font-size: 32px;
   }
 
   @media screen and (max-width: 480px) {
-    font-size: 32px;
+    font-size: 24px;
   }
 `;
 
@@ -82,8 +92,10 @@ export const HeroBtnText = styled.p`
 `;
 
 export const HeroBtn = styled(Link)`
-border-radius: 50px;
+  border-radius: 50px;
   background: #ff8c42;
+  display: flex;
+  align-items: center
   white-space: nowrap;
   padding: 10px 22px;
   color: #fff;
@@ -99,13 +111,3 @@ border-radius: 50px;
     background: #f9c784;
     color: #f2f4f3;
   }`
-
-export const ArrowForward = styled(MdArrowForward)`
-  margin-left: 8px;
-  font-size: 24px;
-`;
-
-export const ArrowRight = styled(MdKeyboardArrowRight)`
-  margin-left: 8px;
-  font-size: 24px;
-`;

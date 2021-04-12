@@ -2,27 +2,20 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 
-import Image from "../../assets/images/hero-background.jpg";
+import Video from "../../assets/videos/video.mp4";
 import {
   HeroContainer,
   HeroBg,
-  ImageBg,
+  VideoBg,
   HeroContent,
   HeroH1,
   HeroP,
   HeroBtnWrapper,
   HeroBtn,
   HeroBtnText,
-  ArrowForward,
-  ArrowRight,
 } from "./HeroElements";
 
 const HeroSection = ({ auth }) => {
-  const [hover, setHover] = useState(false);
-
-  const onHover = () => {
-    setHover(!hover);
-  };
 
   const renderContent = () => {
     switch (auth) {
@@ -32,8 +25,7 @@ const HeroSection = ({ auth }) => {
       case false:
         return (
           <>
-            <HeroH1>Faux</HeroH1>
-            <HeroP>Cafe and Bakery</HeroP>
+            <HeroH1>Online Ordering Now Available</HeroH1>
           </>
         );
       default:
@@ -49,7 +41,7 @@ const HeroSection = ({ auth }) => {
   return (
     <HeroContainer id="home">
       <HeroBg>
-        <ImageBg src={Image} type="image/jpg" />
+        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
         {renderContent()}
@@ -59,7 +51,6 @@ const HeroSection = ({ auth }) => {
             to="order"
           >
             <HeroBtnText>Order Online</HeroBtnText>
-            {hover ? <ArrowForward /> : <ArrowRight />}
           </HeroBtn>
         </HeroBtnWrapper>
       </HeroContent>

@@ -68,19 +68,19 @@ export const NavItem = styled.li`
 `;
 
 export const NavName = styled.p`
-  font-size: 0.6rem;
-  color: ${({ scrollNav }) => (scrollNav ? "#FEFEFE" : "#0D1010")};
+  font-size: 0.8rem;
+  color: #fefefe;
 `
 
 export const NavLinks = styled(LinkS)`
-  color: ${({ scrollNav }) => (scrollNav ? "#FEFEFE" : "#0D1010")};
+  color: #fefefe;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   &.active {
     border-bottom: 3px solid #ff8c42;

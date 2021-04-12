@@ -17,7 +17,6 @@ class SpecialsCards extends Component {
   };
 
   componentDidMount() {
-    console.log(this.state.coffees)
     Promise.all([
       fetch("https://random-data-api.com/api/coffee/random_coffee"),
       fetch("https://random-data-api.com/api/coffee/random_coffee"),

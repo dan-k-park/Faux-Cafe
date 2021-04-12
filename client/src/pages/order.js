@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import SignIn from "../components/Signin";
 import OrderNavbar from "../components/OrderNavbar";
-import Menu from '../components/Menu';
+import Order from '../components/Order';
 import ScrollToTop from "../components/ScrollToTop";
 
 class OrderPage extends Component {
@@ -28,7 +28,7 @@ class OrderPage extends Component {
     return (
       <>
         <OrderNavbar />
-        <Menu />
+        <Order />
       </>
     );
   }

@@ -8,29 +8,10 @@ import {
   Nav,
   NavbarContainer,
   NavLogo,
-  MobileIcon,
-  NavMenu,
-  NavItem,
-  NavLinks,
-  NavBtn,
-  NavBtnLink,
   NavName
 } from "./NavbarElements";
 
 const Navbar = ({ toggle, auth }) => {
-  const [scrollNav, setScrollNav] = useState(false);
-
-  const changeNav = () => {
-    if (window.scrollY >= 80) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", changeNav);
-  }, []);
 
   const toggleHome = () => {
     scroll.scrollToTop();
@@ -39,19 +20,12 @@ const Navbar = ({ toggle, auth }) => {
   return (
     <>
       <IconContext.Provider value={{ color: "#ff8c42" }}>
-        <Nav scrollNav={scrollNav}>
+        <Nav>
           <NavbarContainer>
-            <NavLogo to="/" onClick={toggleHome} scrollNav={scrollNav}>
+            <NavLogo to="/" onClick={toggleHome}>
               <CgCoffee />
-              <NavName scrollNav={scrollNav}>Faux Cafe</NavName>
+              <NavName>Faux Cafe</NavName>
             </NavLogo>
-            <MobileIcon onClick={toggle}>
-              <FaBars />
-            </MobileIcon>
-            
-            <NavBtn>
-              <NavBtnLink>Cart</NavBtnLink>
-            </NavBtn>
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>

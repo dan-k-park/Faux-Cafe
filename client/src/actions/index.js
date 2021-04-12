@@ -1,6 +1,6 @@
 // Action creator file
 import axios from 'axios'; // used to make ajax requests
-import { FETCH_USER } from './types';
+import { FETCH_USER, FETCH_MENU } from './types';
 
 
 // Redux thunk inspects the value returned by this action creator
@@ -9,6 +9,19 @@ import { FETCH_USER } from './types';
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
   dispatch({ type: FETCH_USER, payload: res.data });
+}
+
+export const fetchMenu = () => async dispatch => {
+  const res = await axios.get('/api/orders');
+  console.log(res)
+  dispatch({ type: FETCH_MENU, payload: res.data });
+}
+
+export const submitOrder = (values, history) => async dispatch => {
+  const res = await axios.post('/api/orders', values);
+
+  history.push('/');
+  dispatch({ type: FETCH_USER, payload: res.data })
 }
 
 export const handleToken = token => async dispatch => {
